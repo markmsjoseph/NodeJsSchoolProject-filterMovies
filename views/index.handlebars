@@ -1,0 +1,55 @@
+<H1> List of Movies in the Database</H1>
+
+<style>
+
+table tr {
+	text-align: center;
+	padding-left:20px;
+}
+
+table td {
+	padding:18px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+</style>
+{{#each movies}}
+
+ <table cellpadding="20">
+    <tr>
+      <td >{{this.title}}</td>
+      <td>{{this.year}}</td>
+      <td>{{this.director}}</td>
+    </tr>
+  </table>
+
+
+{{/each}}
+
+
+  <form method = "GET" action = "/movies">
+  Enter Director Name<br>
+  <input type = "text" name = "directorName">
+  <input type = "submit">
+  </form>
+<br>
+	<h3>The movies that you filtered are as follows:</h3>
+	<br>
+
+	{{#each filteredArray}}
+
+	 <table cellpadding="20">
+	    <tr>
+	      <td >{{this.title}}</td>
+	      <td>{{this.year}}</td>
+	      <td>{{this.director}}</td>
+	    </tr>
+	  </table>
+
+
+	{{/each}}
